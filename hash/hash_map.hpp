@@ -45,4 +45,5 @@ private:
     std::pair<typename hash_map<Key, T, KeyEqual, Hash>::ListType::iterator, size_t> find_element(const key_type& key);
 };
 
+#include "hash_map.tpp"
 #endif //HASH_MAP

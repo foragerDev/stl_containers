@@ -1,9 +1,9 @@
-#include "hash_map.hpp"
 #include <algorithm>
+#include "hash_map.hpp"
 
 template<typename Key, typename T, typename KeyEqual, typename Hash>
 hash_map<Key, T, KeyEqual, Hash>::hash_map(const KeyEqual& keyEqual, size_t size, const Hash& hash):
-    m_buckets(size), m_equal(keyEqual), mHash(hash)
+    m_buckets(size), m_equal(keyEqual), m_hash(hash)
     {
         if(size == 0){
             throw std::invalid_argument("Number of buckets should be greater than zero");
@@ -38,15 +38,15 @@ hash_map<Key, T, KeyEqual, Hash>::find(const key_type& key){
 template<typename Key, typename T, typename KeyEqual, typename Hash>
 const typename hash_map<Key, T, KeyEqual, Hash>::value_type*
 hash_map<Key, T, KeyEqual, Hash>::find(const key_type& key) const{
-    return const_cast<hash_map<Key, T, KeyEqual, Hash>*>(this)->find(k);
+    return const_cast<hash_map<Key, T, KeyEqual, Hash>*>(this)->find(key);
 }
 
 template<typename Key, typename T, typename KeyEqual, typename Hash>
 T& hash_map<Key, T, KeyEqual, Hash>::operator[](const Key& key){
     auto[it, bucket] = find_element(key);
-    if(it == m_buckets.end()){
+    if(it == end(m_buckets[bucket])){
         m_size++;
-        m_buckets[bucket] =.push_back(std::make_pair(key, T()));
+        m_buckets[bucket].push_back(std::make_pair(key, T()));
         return m_buckets[bucket].back().second;
     }
     else  return it->second;

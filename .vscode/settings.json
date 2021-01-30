@@ -9,6 +9,7 @@
         "system_error": "cpp",
         "thread": "cpp",
         "typeindex": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "hash/hash_map": "cpp",
     }
 }

@@ -1,13 +1,15 @@
-#include "hash_map/hash_map.hpp"
 #include <iostream>
-#include <string>
+#include "hash/hash_map.hpp"
 
 int main(){
-    hash_map<std::string, int> map;
-    map["Mohsan"] = 10;
-    auto f = map.find("Mohsan");
+    hash_map<char, int> map;
+    map['C'] = 10;
+    auto f = map.find('C');
     if(f){
         std::cout << f->first << " " << f->second << std::endl;
+    }
+    else{
+        std::cout<< "Not found" << std::endl;
     }
     return 0;
 }

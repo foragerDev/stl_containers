@@ -3,7 +3,7 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**",
+                "${workspaceFolder}/hash/**",
                 "${vcpkgRoot}/x64-linux/include"
             ],
             "defines": [],
