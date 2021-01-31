@@ -1,5 +1,5 @@
-#ifndef __CONST_HASH_MAP_ITERATOR__
-#define __CONST_HASH_MAP_ITERATOR__
+#ifndef _CONST_HASH_MAP_ITERATOR_
+#define _CONST_HASH_MAP_ITERATOR_
 
 template <typename HashMap>
 class const_hash_map_iterator

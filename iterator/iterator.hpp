@@ -1,5 +1,5 @@
-#ifndef __CONST_HASH_MAP_ITERATOR__
-#define __CONST_HASH_MAP_ITERATOR__
+#ifndef _HASH_MAP_ITERATOR_
+#define _HASH_MAP_ITERATOR_
 
 #include "const_iterator.hpp"
 
