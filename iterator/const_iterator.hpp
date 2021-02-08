@@ -10,7 +10,7 @@ public:
     using iterator_category = std::bidirectional_iterator_tag;
     using pointer = value_type *;
     using reference = value_type &;
-    using list_iterator_type = typename HashMap::ListType;
+    using list_iterator_type = typename HashMap::ListType::const_iterator;
 
     const_hash_map_iterator() = default;
     const_hash_map_iterator(std::size_t bucket, list_iterator_type list_it, const HashMap *hash_map)

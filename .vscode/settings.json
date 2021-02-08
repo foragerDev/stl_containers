@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "*.tpp": "cpp",
-        "stdexcept": "cpp"
+        "stdexcept": "cpp",
+        "initializer_list": "cpp",
+        "array": "cpp"
     }
 }

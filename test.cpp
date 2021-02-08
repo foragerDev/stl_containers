@@ -1,21 +1,20 @@
 #include <iostream>
-#include "hash/hash_map.hpp"
-
+#include "my_array/my_array.hpp"
+#include <array>
 int main(){
-    hash_map<char, int> map;
-    map['C'] = 10;
-    auto f = map.find('C');
-    map.erase('C');
-    f = map.find('C');
-    map.insert({'A', 20});
-    f = map.find('A');
-    hash_map<char, int> new_map= std::move(map);
-    f = new_map.find('A');
-    if(f){
-        std::cout << f->first << " " << f->second << std::endl;
+    my_array<int, 10> my_arr;
+//    my_array<int, 10> my_arr2 = my_arr;
+    my_arr.fill(10);
+    my_arr[5] = 11;
+    my_array<int, 10> arr{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    arr = std::move(my_arr);
+    for (int i = 0; i < 10; i++)
+    {
+        std::cout << my_arr[i] << std::endl;
     }
-    else{
-        std::cout<< "Not found" << std::endl;
+    std::cout << "Second Array" << std::endl;
+    for (int i = 0; i < 10; i++)
+    {
+        std::cout << arr[i] << std::endl;
     }
-    return 0;
 }

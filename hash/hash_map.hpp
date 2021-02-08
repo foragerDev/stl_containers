@@ -22,6 +22,9 @@ public:
     using iterator = hash_map_iterator<hash_map_type>;
     using const_iterator = const_hash_map_iterator<hash_map_type>;
 
+    friend class const_hash_map_iterator<hash_map_type>;
+    friend class hash_map_iterator<hash_map_type>;
+
     virtual ~hash_map() = default; // destructor
 
     explicit hash_map(const KeyEqual &equal = KeyEqual(), size_t buckets = 101, const Hash &hash = Hash());

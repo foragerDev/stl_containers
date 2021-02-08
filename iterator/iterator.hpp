@@ -7,7 +7,7 @@ template <typename HashMap>
 class hash_map_iterator : public const_hash_map_iterator<HashMap>
 {
 public:
-    using value_type = typename HashMap::value_type;
+    using value_type = typename const_hash_map_iterator<HashMap>::value_type;
     using difference_type = ptrdiff_t;
     using iterator_category = std::bidirectional_iterator_tag;
     using pointer = value_type *;
@@ -19,9 +19,9 @@ public:
     {
     }
 
-    reference operator*()
+    value_type& operator*()
     {
-        return const_cast<reference>(*this->m_list_iterator);
+        return const_cast<value_type&>(*this->m_list_iterator);
     }
     pointer operator->()
     {
